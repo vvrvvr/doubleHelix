@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Rotation : MonoBehaviour
@@ -136,4 +137,12 @@ public class Rotation : MonoBehaviour
             currentRb.angularVelocity = -Vector3.up * currentRotationSpeed * Time.fixedDeltaTime;
         }
     }
+
+    public void Death()
+    {
+        Debug.Log("death");
+        // Destroy(currentCenter); 
+        // Destroy(this);
+    }
+    
 }
