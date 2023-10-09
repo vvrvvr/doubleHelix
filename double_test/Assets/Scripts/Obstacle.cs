@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player" ))
         {
             Rotation.Instance.isRotatingClockwise = !Rotation.Instance.isRotatingClockwise;
-            Debug.Log("collision да");
+           // Debug.Log("collision да");
             
         }
     }

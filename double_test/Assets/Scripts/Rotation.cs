@@ -26,6 +26,7 @@ public class Rotation : MonoBehaviour
     private Rigidbody currentRb;
     //public GameObject currentCenter = null;
     public GameObject currentCenter = null;
+    private float interactionDistance = 2f;
 
     private static Rotation _instance;
     public static Rotation Instance
@@ -110,6 +111,8 @@ public class Rotation : MonoBehaviour
 
             currentRotationSpeed = normalRotationSpeed;
             accelerationTimer = 0f;
+            
+            InteractWithFloor();
         }
 
         if (Input.GetKey(KeyCode.Space))
@@ -143,6 +146,23 @@ public class Rotation : MonoBehaviour
         Debug.Log("death");
         // Destroy(currentCenter); 
         // Destroy(this);
+    }
+
+    private void InteractWithFloor()
+    {
+        if (currentCenter != null)
+        {
+            RaycastHit hit;
+            Ray ray = new Ray(currentCenter.transform.position, Vector3.down);
+            if (Physics.Raycast(ray, out hit, interactionDistance))
+            {
+                if (hit.collider.gameObject != null)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    //Здесь будут интерфейсы
+                }
+            }
+        }
     }
     
 }
