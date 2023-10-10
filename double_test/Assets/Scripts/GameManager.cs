@@ -1,14 +1,17 @@
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI livesText;
+    [SerializeField] private GameObject StartPosition;
     
     private static GameManager _instance;
     private int lives = 3;
-    private Transform checkpoint;
-    private Transform startPosition;
+    private Transform currentCheckpoint;
+    
     
     public static GameManager Instance
     {
@@ -41,9 +44,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         livesText.text = "Lives: " + lives;
-        checkpoint = null;
+        currentCheckpoint = null;
+        StartPosition.GetComponent<Renderer>().enabled = false;
+        PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.A)) // удалить потом
+        {
+            PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
+        }
+    }
 
     public void ReduceLives()
     {
@@ -71,16 +83,22 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        
+        lives = 3;
+        livesText.text = "Lives: " + lives;
+        currentCheckpoint = null;
+        PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
     }
 
     public void RestartLevelFromCheckpoint()
     {
-        
+        if (currentCheckpoint != null)
+            PlayerController.Instance.SpawnPlayer(currentCheckpoint.position);
+        else
+            RestartLevel();
     }
     
-    public void Checkpoint()
+    public void Checkpoint(Transform position)
     {
-        
+        currentCheckpoint = position;
     }
 }

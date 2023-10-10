@@ -59,25 +59,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        hasControl = true;
-        position1 = red.transform;
-        position2 = blue.transform;
-        normalRotationSpeed = rotationSpeed;
-        currentRb = rb1;
-        center1.transform.SetParent(null);
-        center1.transform.position = new Vector3(position1.position.x, 0f, position1.position.z);
-        center1.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        body.transform.SetParent(center1.transform);
-        center2.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        center2.transform.position = new Vector3(position2.position.x, 0f, position2.position.z);
-        center2.transform.SetParent(null);
-        currentRotationSpeed = normalRotationSpeed;
-        red.GetComponent<PlayerPointer>().isGrounded = true;
-        currentCenter = center1;
-    }
-
     private void Update()
     {
         if (!hasControl)
@@ -161,6 +142,8 @@ public class PlayerController : MonoBehaviour
         currentRb.angularVelocity = Vector3.zero;
         currentRb.velocity = Vector3.zero;
         hasControl = false;
+        currentCenter.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        currentCenter.SetActive(false);
     }
 
     private void InteractWithFloor()
@@ -183,5 +166,29 @@ public class PlayerController : MonoBehaviour
     public void ChangeRotation()
     {
         isRotatingClockwise = !isRotatingClockwise;
+    }
+
+    public void SpawnPlayer(Vector3 position)
+    {
+        if(currentCenter !=null)
+            currentCenter.SetActive(true);
+        hasControl = true;
+        position1 = red.transform;
+        position2 = blue.transform;
+        normalRotationSpeed = rotationSpeed;
+        currentRb = rb1;
+        center1.transform.SetParent(null);
+        center1.transform.position = new Vector3(position1.position.x, 0f, position1.position.z);
+        center1.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        body.transform.SetParent(center1.transform);
+        center2.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        center2.transform.position = new Vector3(position2.position.x, 0f, position2.position.z);
+        center2.transform.SetParent(null);
+        currentRotationSpeed = normalRotationSpeed;
+        red.GetComponent<PlayerPointer>().isGrounded = true;
+        
+        currentCenter = center1;
+        currentCenter.transform.position = new Vector3(position.x, 0f, position.y);
+        currentCenter.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }
