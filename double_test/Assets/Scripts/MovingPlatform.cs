@@ -12,7 +12,7 @@ public class MovingPlatform : MonoBehaviour
         if (!isCarryPlayer && other.CompareTag("PlayerPoint"))
         {
             _playerPointer = other.gameObject.GetComponent<PlayerPointer>();
-            if ( _playerPointer.isGrounded)
+            if ( _playerPointer.isGrounded && PlayerController.Instance.hasControl == true)
             {
                 PlayerController.Instance.currentCenter.transform.SetParent(this.transform);
                 isCarryPlayer = true;

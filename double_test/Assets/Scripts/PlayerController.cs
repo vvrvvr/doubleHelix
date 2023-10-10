@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject currentCenter = null;
     public GameObject currentCenter = null;
     private float interactionDistance = 2f;
+    [HideInInspector] public bool hasControl;
 
     private static PlayerController _instance;
 
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        hasControl = true;
         position1 = red.transform;
         position2 = blue.transform;
         normalRotationSpeed = rotationSpeed;
@@ -78,6 +80,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!hasControl)
+            return;
+        
         currentRb.velocity = Vector3.zero;
         currentRb.transform.rotation = Quaternion.Euler(0f, currentRb.transform.rotation.eulerAngles.y, 0f);
         if (Input.GetKeyDown(KeyCode.Space))
@@ -135,6 +140,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!hasControl)
+        {
+            return;
+        }
+        
         if (isRotatingClockwise)
         {
             currentRb.angularVelocity = Vector3.up * currentRotationSpeed * Time.fixedDeltaTime;
@@ -148,8 +158,9 @@ public class PlayerController : MonoBehaviour
     public void Death()
     {
         Debug.Log("death");
-        // Destroy(currentCenter); 
-        // Destroy(this);
+        currentRb.angularVelocity = Vector3.zero;
+        currentRb.velocity = Vector3.zero;
+        hasControl = false;
     }
 
     private void InteractWithFloor()
