@@ -188,7 +188,7 @@ public class PlayerController : MonoBehaviour
         red.GetComponent<PlayerPointer>().isGrounded = true;
         
         currentCenter = center1;
-        currentCenter.transform.position = new Vector3(position.x, 0f, position.y);
+        currentCenter.transform.position = new Vector3(position.x, 0f, position.z);
         currentCenter.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }

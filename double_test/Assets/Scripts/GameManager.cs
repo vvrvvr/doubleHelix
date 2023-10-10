@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     
     private static GameManager _instance;
     private int lives = 3;
-    private Transform currentCheckpoint;
+    public Vector3 currentCheckpoint;
     
     
     public static GameManager Instance
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         livesText.text = "Lives: " + lives;
-        currentCheckpoint = null;
+        currentCheckpoint = Vector3.zero;
         StartPosition.GetComponent<Renderer>().enabled = false;
         PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
     }
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A)) // удалить потом
         {
-            PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
+            RestartLevelFromCheckpoint();
         }
     }
 
@@ -85,19 +85,23 @@ public class GameManager : MonoBehaviour
     {
         lives = 3;
         livesText.text = "Lives: " + lives;
-        currentCheckpoint = null;
+        currentCheckpoint = Vector3.zero;
         PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
     }
 
     public void RestartLevelFromCheckpoint()
     {
-        if (currentCheckpoint != null)
-            PlayerController.Instance.SpawnPlayer(currentCheckpoint.position);
+        if (currentCheckpoint != Vector3.zero)
+        {
+            lives = 3;
+            livesText.text = "Lives: " + lives;
+            PlayerController.Instance.SpawnPlayer(currentCheckpoint);
+        }
         else
             RestartLevel();
     }
     
-    public void Checkpoint(Transform position)
+    public void SetCheckpoint(Vector3 position)
     {
         currentCheckpoint = position;
     }
