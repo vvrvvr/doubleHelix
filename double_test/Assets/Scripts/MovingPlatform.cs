@@ -14,7 +14,7 @@ public class MovingPlatform : MonoBehaviour
             _playerPointer = other.gameObject.GetComponent<PlayerPointer>();
             if ( _playerPointer.isGrounded)
             {
-                Rotation.Instance.currentCenter.transform.SetParent(this.transform);
+                PlayerController.Instance.currentCenter.transform.SetParent(this.transform);
                 isCarryPlayer = true;
                 Debug.Log("on platform");
             }

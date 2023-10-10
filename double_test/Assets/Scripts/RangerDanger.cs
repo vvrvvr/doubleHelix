@@ -6,8 +6,8 @@ public class RangerDanger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player" ))
         {
-            Rotation.Instance.isRotatingClockwise = !Rotation.Instance.isRotatingClockwise;
-            Rotation.Instance.Death();
+            PlayerController.Instance.isRotatingClockwise = !PlayerController.Instance.isRotatingClockwise;
+            PlayerController.Instance.Death();
         }
     }
 }
