@@ -179,4 +179,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void ChangeRotation()
+    {
+        isRotatingClockwise = !isRotatingClockwise;
+    }
 }

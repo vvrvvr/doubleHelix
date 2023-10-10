@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     
     private static GameManager _instance;
     private int lives = 3;
+    private Transform checkpoint;
+    private Transform startPosition;
     
     public static GameManager Instance
     {
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         livesText.text = "Lives: " + lives;
+        checkpoint = null;
     }
     
 
@@ -50,6 +53,12 @@ public class GameManager : MonoBehaviour
         {
             Death();
         }
+    }
+
+    public void IncreaseLives()
+    {
+        lives += 1;
+        livesText.text = "Lives: " + lives;
     }
 
     public void Death()
@@ -65,6 +74,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void RestartLevelFromCheckpoint()
+    {
+        
+    }
+    
     public void Checkpoint()
     {
         

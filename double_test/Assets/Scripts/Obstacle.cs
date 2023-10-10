@@ -21,7 +21,7 @@ public class Obstacle : MonoBehaviour
         // Проверяем, если объект с тэгом "Player" входит в триггер
         if (collision.gameObject.CompareTag("Player" ))
         {
-            PlayerController.Instance.isRotatingClockwise = !PlayerController.Instance.isRotatingClockwise;
+            PlayerController.Instance.ChangeRotation();
            // Debug.Log("collision да");
             
         }
