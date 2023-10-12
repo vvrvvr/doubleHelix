@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject StartPosition;
     
     private static GameManager _instance;
-    private int lives = 3;
+    public int lives = 3;
     public Vector3 currentCheckpoint;
     
     

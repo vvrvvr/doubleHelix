@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public bool isRotatingClockwise = true;
     private float normalRotationSpeed; // Нормальная скорость вращения
-    private float currentRotationSpeed; // Текущая скорость вращения
+    public float currentRotationSpeed; // Текущая скорость вращения
     private float accelerationTimer; // Таймер ускорения
 
     private Rigidbody currentRb;
@@ -66,6 +66,23 @@ public class PlayerController : MonoBehaviour
         
         currentRb.velocity = Vector3.zero;
         currentRb.transform.rotation = Quaternion.Euler(0f, currentRb.transform.rotation.eulerAngles.y, 0f);
+        
+        HandleInput();
+        HandleAcceleration();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!hasControl)
+        {
+            return;
+        }
+        
+        HandleRotation();
+    }
+
+    private void HandleInput()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isRotatingClockwise = !isRotatingClockwise;
@@ -102,7 +119,10 @@ public class PlayerController : MonoBehaviour
 
             InteractWithFloor();
         }
+    }
 
+    private void HandleAcceleration()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
             if (accelerationTimer < accelerationTime)
@@ -119,13 +139,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void HandleRotation()
     {
-        if (!hasControl)
-        {
-            return;
-        }
-        
         if (isRotatingClockwise)
         {
             currentRb.angularVelocity = Vector3.up * currentRotationSpeed * Time.fixedDeltaTime;

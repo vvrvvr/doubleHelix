@@ -347,7 +347,7 @@ Transform:
   m_GameObject: {fileID: 29179243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.059999943, y: -0.5, z: -0.56999993}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 3, y: 0.0545, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5409,6 +5409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2005906173533103570, guid: 23847c65941f9484189e9f1338997697, type: 3}
+      propertyPath: speedMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2504031854943131559, guid: 23847c65941f9484189e9f1338997697, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -6346,6 +6350,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1633577303232741229, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4633134707601680914, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6389,6 +6397,10 @@ PrefabInstance:
     - target: {fileID: 7216531778288786683, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128538366292481159, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11683,6 +11695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pit
       objectReference: {fileID: 0}
+    - target: {fileID: 7295016341301516258, guid: 1c6baa8738b27ae46a0324e24b065fcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14008,9 +14024,21 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 5130305741646762846, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
+      propertyPath: lives
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130305741646762846, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: livesText
       value: 
       objectReference: {fileID: 1619769673}
+    - target: {fileID: 6844251552645605550, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844251552645605550, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8054275919967323354, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
