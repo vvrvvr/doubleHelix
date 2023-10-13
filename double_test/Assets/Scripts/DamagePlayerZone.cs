@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class DamagePlayerZone : MonoBehaviour, IInteractable
 {
-    private CinemachineImpulseSource impulseSource;
+    [SerializeField] private float impulsePower = 1;
     public InteractionOption InteractionOption { get; set; }
     public void Interact()
     {
-        GameManager.Instance.ReduceLives();
-        impulseSource = GetComponent<CinemachineImpulseSource>();
-        if(impulseSource !=null)
-            impulseSource.GenerateImpulse();
+        GameManager.Instance.ReduceLives(1,impulsePower);
         Debug.Log("Damage zone");
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public int lives = 3;
     public Vector3 currentCheckpoint;
+    private CinemachineImpulseSource impulseSource;
     
     
     public static GameManager Instance
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         livesText.text = "Lives: " + lives;
         currentCheckpoint = Vector3.zero;
         StartPosition.GetComponent<Renderer>().enabled = false;
@@ -56,10 +59,11 @@ public class GameManager : MonoBehaviour
             RestartLevelFromCheckpoint();
         }
     }
-
-    public void ReduceLives()
+    
+    public void ReduceLives(int damage, float impulsePower)
     {
-        lives -= 1;
+        impulseSource.GenerateImpulse(impulsePower);
+        lives -= damage;
         livesText.text = "Lives: " + lives;
         if (lives <= 0)
         {
