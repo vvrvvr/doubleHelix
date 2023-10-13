@@ -1,41 +1,11 @@
-using System;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour, IInteractable
 {
-    public bool isCarryPlayer = false;
-    public bool isGrounded = false;
-    private PlayerPointer _playerPointer;
-    private void OnTriggerStay(Collider other)
-    {
-        if (!isCarryPlayer && other.CompareTag("PlayerPoint"))
-        {
-            _playerPointer = other.gameObject.GetComponent<PlayerPointer>();
-            if ( _playerPointer.isGrounded && PlayerController.Instance.hasControl == true)
-            {
-                PlayerController.Instance.currentCenter.transform.SetParent(this.transform);
-                isCarryPlayer = true;
-                Debug.Log("on platform");
-            }
-        }
-    }
+    public InteractionOption InteractionOption { get; set; }
 
-    private void Update()
+   public void Interact()
     {
-        if (isCarryPlayer && !_playerPointer.isGrounded)
-        {
-            isCarryPlayer = false;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        // if (isCarryPlayer && isGrounded == false)
-        // {
-        //     Rotation.Instance.currentCenter.transform.SetParent(null);
-        //     isCarryPlayer = false;
-        //     Debug.Log("exit platform 2");
-        // }
+        PlayerController.Instance.currentCenter.transform.SetParent(this.transform);
     }
 }

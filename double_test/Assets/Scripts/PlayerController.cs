@@ -93,9 +93,6 @@ public class PlayerController : MonoBehaviour
 
             if (currentCenter == center1)
             {
-                blue.GetComponent<PlayerPointer>().isGrounded = false;
-                red.GetComponent<PlayerPointer>().isGrounded = true;
-                //center1.transform.SetParent(null);
                 center1.transform.position = new Vector3(position1.position.x, 0f, position1.position.z);
                 center1.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 body.transform.SetParent(center1.transform);
@@ -104,9 +101,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                red.GetComponent<PlayerPointer>().isGrounded = false;
-                blue.GetComponent<PlayerPointer>().isGrounded = true;
-                //center2.transform.SetParent(null);
                 center2.transform.position = new Vector3(position2.position.x, 0f, position2.position.z);
                 center2.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 body.transform.SetParent(center2.transform);
@@ -200,7 +194,6 @@ public class PlayerController : MonoBehaviour
         center2.transform.position = new Vector3(position2.position.x, 0f, position2.position.z);
         center2.transform.SetParent(null);
         currentRotationSpeed = normalRotationSpeed;
-        red.GetComponent<PlayerPointer>().isGrounded = true;
         
         currentCenter = center1;
         currentCenter.transform.position = new Vector3(position.x, 0f, position.z);
