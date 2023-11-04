@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bomb: {fileID: 6764152172844553548}
-  reduceTimeAtExplosion: 6
-  delayAfterExplosionAffect: 0
+  reduceTimeAtExplosion: 4
+  delayAfterExplosionAffect: 1
   delayTime: 1
   bombCameraShakePower: 0.1
   bombTimer: 10
