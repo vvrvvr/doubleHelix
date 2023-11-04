@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
             RestartLevelFromCheckpoint();
             //EndLevel();
         }
+        if(Input.GetKeyDown(KeyCode.Q)) // удалить потом
+        {
+            //RestartLevelFromCheckpoint();
+            EndLevel();
+        }
     }
     
     public void ReduceLives(int damage, float impulsePower)
