@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A)) // удалить потом
+        if(Input.GetKeyDown(KeyCode.S)) // удалить потом
         {
             RestartLevelFromCheckpoint();
         }
