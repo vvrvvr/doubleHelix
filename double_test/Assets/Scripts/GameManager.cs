@@ -60,9 +60,8 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.O)) // удалить потом
         {
-            
             RestartLevelFromCheckpoint();
-            EndLevel();
+            //EndLevel();
         }
     }
     

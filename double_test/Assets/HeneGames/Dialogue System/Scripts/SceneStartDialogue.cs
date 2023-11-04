@@ -6,10 +6,10 @@ public class SceneStartDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            StartDialog();
-        }
+        // if(Input.GetKeyDown(KeyCode.D))
+        // {
+        //     StartDialog();
+        // }
     }
     public void StartDialog()
     {
