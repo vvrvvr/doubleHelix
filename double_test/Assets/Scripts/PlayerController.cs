@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     //public GameObject currentCenter = null;
     public GameObject currentCenter = null;
+    [Space(10)] 
+    public GameObject bombPrefab;
     private float interactionDistance = 2f;
     [HideInInspector] public bool hasControl;
 
@@ -86,6 +88,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isRotatingClockwise = !isRotatingClockwise;
+            
+            Instantiate(bombPrefab, currentCenter.transform.position, Quaternion.identity);
+            
             if (currentCenter == center1)
                 currentCenter = center2;
             else

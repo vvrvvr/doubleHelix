@@ -71,6 +71,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CameraShake(float impulsePower)
+    {
+        impulseSource.GenerateImpulse(impulsePower);
+    }
+
     public void IncreaseLives()
     {
         lives += 1;
