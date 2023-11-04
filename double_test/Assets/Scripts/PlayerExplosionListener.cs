@@ -15,15 +15,16 @@ public class PlayerExplosionListener : MonoBehaviour, IExplodable
             if (isDelay)
                 return;
             isDelay = true;
-           GameManager.Instance.ReduceLives(1, 1);
-           StartCoroutine(ResetDelay());
+            GameManager.Instance.ReduceLives(1, 1);
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(ResetDelay());
         }
         else
         {
-           GameManager.Instance.ReduceLives(1, 1);
+            GameManager.Instance.ReduceLives(1, 1);
         }
     }
-  
+
     private IEnumerator ResetDelay()
     {
         yield return new WaitForSeconds(delayTime);

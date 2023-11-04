@@ -4140,6 +4140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 4253441273438233769, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6068652352612650041, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.36
@@ -6234,6 +6238,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3059077912860672349, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
+      propertyPath: iFramesAfterDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4633134707601680914, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9442,6 +9450,10 @@ PrefabInstance:
     - target: {fileID: 4253441273438233769, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
       propertyPath: m_Name
       value: Bomb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253441273438233769, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6068652352612650041, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14004,6 +14016,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1307214248870227533, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2547640706405803108, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: m_Name
       value: Game Manager
