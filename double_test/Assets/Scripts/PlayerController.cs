@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
     
     [Space(10)] 
     [SerializeField] private bool iFramesAfterDamage = false;
-     [SerializeField] private float iFramseDuration = 0.3f;
+    [SerializeField] private float iFramseDuration = 0.3f;
+
+    private bool isChangeCenter = false;
     
 
     private static PlayerController _instance;
@@ -102,9 +104,21 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            isRotatingClockwise = !isRotatingClockwise;
+            isRotatingClockwise = true;
+            isChangeCenter = true;
+        }
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            isRotatingClockwise = false;
+            isChangeCenter = true;
+        }
+        
+        if (isChangeCenter)
+        {
+            isChangeCenter = false;
+            //isRotatingClockwise = !isRotatingClockwise;
             
             Instantiate(bombPrefab, currentCenter.transform.position, Quaternion.identity);
             
@@ -152,6 +166,12 @@ public class PlayerController : MonoBehaviour
         {
             currentRotationSpeed = Mathf.Lerp(currentRotationSpeed, normalRotationSpeed,
                 Time.deltaTime / deaccelerationTime);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            currentRotationSpeed = normalRotationSpeed;
+            accelerationTimer = 0f;
         }
     }
 
