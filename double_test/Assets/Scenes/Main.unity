@@ -16877,9 +16877,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbleZone
       objectReference: {fileID: 0}
+    - target: {fileID: 2702535336661778876, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2548597
+      value: 12.07
       objectReference: {fileID: 0}
     - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16887,7 +16903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.70004
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 8137078962727208854, guid: 8afe0e12f4617e048b4c73d50b3b8897, type: 3}
       propertyPath: m_LocalRotation.w
