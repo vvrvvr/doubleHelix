@@ -15,4 +15,9 @@ public class SceneStartDialogue : MonoBehaviour
     {
         startDialogue.SetActive(true);
     }
+
+    public void EndDialogue()
+    {
+        Destroy(gameObject);
+    }
 }

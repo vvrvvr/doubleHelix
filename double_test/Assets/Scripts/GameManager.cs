@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private GameObject StartPosition;
     [SerializeField] private GameObject StartDialogue;
+    [SerializeField] private GameObject EndDialogue;
     
     
     private static GameManager _instance;
@@ -59,7 +60,9 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.O)) // удалить потом
         {
+            
             RestartLevelFromCheckpoint();
+            EndLevel();
         }
     }
     
@@ -103,10 +106,26 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel()
     {
-        if (StartDialogue != null)
+        if (StartDialogue.activeSelf)
         {
-            StartDialogue.SetActive(true);
             StartDialogue.GetComponent<SceneStartDialogue>().StartDialog();
+        }
+        else
+        {
+            SpawnPlayerAtStart();
+        }
+    }
+
+    public void EndLevel()
+    {
+        if (EndDialogue.activeSelf)
+        {
+            Death();
+            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
+        }
+        else
+        {
+            Death();
         }
     }
 
