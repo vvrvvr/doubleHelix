@@ -119,8 +119,8 @@ public class PlayerController : MonoBehaviour
         {
             isChangeCenter = false;
             //isRotatingClockwise = !isRotatingClockwise;
-            
-            Instantiate(bombPrefab, currentCenter.transform.position, Quaternion.identity);
+            if(currentCenter.name !="1")
+                Instantiate(bombPrefab, red.transform.position, Quaternion.identity);
             
             if (currentCenter == center1)
                 currentCenter = center2;
