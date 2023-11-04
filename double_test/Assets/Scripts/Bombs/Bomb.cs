@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using TMPro.SpriteAssetUtilities;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class Bomb : MonoBehaviour
 {
-   [SerializeField] private MeshRenderer fieldMeshRenderer;
+   //[SerializeField] private MeshRenderer fieldMeshRenderer;
    [SerializeField] private GameObject parent;
    [SerializeField] private GameObject explosion;
    public TextMeshProUGUI timerText;
@@ -23,7 +17,7 @@ public class Bomb : MonoBehaviour
     
     void Start()
     {
-        fieldMeshRenderer.enabled = true;
+        //fieldMeshRenderer.enabled = true;
         timeRemaining = bombTimer;
         isTimerRunning = true;
         UpdateTimerText();

@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 5123183222749828518}
   - component: {fileID: 948353858607613627}
   - component: {fileID: 4694372020040629341}
+  - component: {fileID: 8247652290711069562}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Player
@@ -456,6 +457,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &8247652290711069562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851221620021938603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52757338017004f4d867a61ba978c2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayAfterExplosionAffect: 0
+  delayTime: 0.3
 --- !u!1 &7216531778288786683
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,13 +525,18 @@ MonoBehaviour:
   blue: {fileID: 6189715889204147971}
   rb1: {fileID: 6626663030219673556}
   rb2: {fileID: 921845368006036043}
+  explosionListener: {fileID: 8247652290711069562}
+  bombPrefab: {fileID: 4253441273438233769, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
+  isRotatingClockwise: 1
+  currentCenter: {fileID: 0}
+  currentRotationSpeed: 0
   rotationSpeed: 100
   rotationSpeedMax: 400
   accelerationTime: 0.6
   deaccelerationTime: 0.5
-  isRotatingClockwise: 1
-  currentCenter: {fileID: 0}
   hasControl: 0
+  delayAfterExplosionAffect: 1
+  delayTime: 1
 --- !u!1 &9128538366292481159
 GameObject:
   m_ObjectHideFlags: 0

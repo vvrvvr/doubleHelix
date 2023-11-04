@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,25 +13,33 @@ public class PlayerController : MonoBehaviour
     private Transform position2;
     public Rigidbody rb1;
     public Rigidbody rb2;
-    public float rotationSpeed = 100.0f;
-    public float rotationSpeedMax = 200.0f; // Максимальная скорость вращения
-    public float accelerationTime = 1.0f;
-    public float deaccelerationTime = 0.5f; // Время ускорения до максимальной скорости
-
+    [SerializeField] private PlayerExplosionListener explosionListener;
+    public GameObject bombPrefab;
+    
     private Rigidbody rb;
     public bool isRotatingClockwise = true;
+    public GameObject currentCenter = null;
+    [Space(50)] 
     private float normalRotationSpeed; // Нормальная скорость вращения
     public float currentRotationSpeed; // Текущая скорость вращения
     private float accelerationTimer; // Таймер ускорения
 
     private Rigidbody currentRb;
+    
+    
+    public float rotationSpeed = 100.0f;
+    public float rotationSpeedMax = 200.0f; // Максимальная скорость вращения
+    public float accelerationTime = 1.0f;
+    public float deaccelerationTime = 0.5f; // Время ускорения до максимальной скорости
 
     //public GameObject currentCenter = null;
-    public GameObject currentCenter = null;
-    [Space(10)] 
-    public GameObject bombPrefab;
     private float interactionDistance = 2f;
     [HideInInspector] public bool hasControl;
+
+    [Space(10)] 
+    [SerializeField] private bool delayAfterExplosionAffect = false;
+    [SerializeField] private float delayTime = 0.3f;
+    
 
     private static PlayerController _instance;
 
@@ -50,6 +59,12 @@ public class PlayerController : MonoBehaviour
 
             return _instance;
         }
+    }
+
+    private void Start()
+    {
+        explosionListener.delayAfterExplosionAffect = delayAfterExplosionAffect;
+        explosionListener.delayTime = delayTime;
     }
 
     private void Awake()

@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff697e2bcd4a9a41b85f90745def15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldMeshRenderer: {fileID: 804312082723073864}
   parent: {fileID: 4253441273438233769}
   explosion: {fileID: 6827611272139589750, guid: 883c85870b0764942a22bf1575745ddd, type: 3}
   timerText: {fileID: 4662541707683951304}
