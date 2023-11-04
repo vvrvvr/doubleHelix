@@ -14,4 +14,10 @@ public interface IExplodable
 {
     void BombExplode();
 }
+public interface IQuestCondition
+{
+    void ConditionComplete();
+    void SetQuestManager(QuestManager questManager);
+}
+
 
