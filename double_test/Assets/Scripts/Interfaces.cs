@@ -10,3 +10,8 @@ public enum InteractionOption
     Option1,
     Option2
 }
+public interface IExplodable
+{
+    void BombExplode();
+}
+

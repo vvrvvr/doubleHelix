@@ -10,15 +10,14 @@ using UnityEngine.UI;
 public class Bomb : MonoBehaviour
 {
    [SerializeField] private MeshRenderer fieldMeshRenderer;
-   [SerializeField] private MeshRenderer bombMeshRenderer;
-   [SerializeField] private GameObject timerObject;
+   [SerializeField] private GameObject parent;
    [SerializeField] private GameObject explosion;
    public TextMeshProUGUI timerText;
-   public float bombShakePower = 0.1f;
 
    [Space(15)]
-    public int bombTimer = 10;       // Время таймера в секундах
-
+   [HideInInspector] public float bombShakePower;
+   [HideInInspector] public int bombTimer; 
+    // Время таймера в секундах
     private float timeRemaining;    // Оставшееся время таймера
     private bool isTimerRunning;    // Флаг для определения, идет ли таймер
     
@@ -58,17 +57,16 @@ public class Bomb : MonoBehaviour
     private void OnTimerComplete()
     {
         Explode();
-        Debug.Log("Таймер завершен! Время вышло!");
     }
 
     public void Explode()
     {
-        bombMeshRenderer.enabled = false;
-        fieldMeshRenderer.enabled = false;
-        timerObject.SetActive(false);
-        explosion.SetActive(true);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         GameManager.Instance.CameraShake(bombShakePower);
+        ExplodeObjectsInsideCollider();
+        Destroy(parent);
     }
+    
 
     public void ReduceTime(int seconds)
     {
@@ -77,9 +75,27 @@ public class Bomb : MonoBehaviour
             timeRemaining -= seconds;
             if (timeRemaining < 0f)
             {
-                timeRemaining = 0f;
+                timeRemaining = 0.1f;
             }
             UpdateTimerText();
+        }
+    }
+    
+    private void ExplodeObjectsInsideCollider()
+    {
+        float explosionDistance = GetComponent<SphereCollider>().radius * transform.localScale.x;
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionDistance);
+        
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject != parent) // Исключаем сам объект
+            {
+                IExplodable interactable = collider.gameObject.GetComponent<IExplodable>();
+                if (interactable != null)
+                {
+                    interactable.BombExplode();
+                }
+            }
         }
     }
 }
