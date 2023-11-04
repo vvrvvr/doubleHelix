@@ -6234,6 +6234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3059077912860672349, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
+      propertyPath: iFramesAfterDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4633134707601680914, guid: 985dbb9f5eb6f8a489a6d61dbd5ecf62, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
