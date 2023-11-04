@@ -16445,6 +16445,10 @@ PrefabInstance:
       propertyPath: StartDialogue
       value: 
       objectReference: {fileID: 1393033103544122651}
+    - target: {fileID: 5130305741646762846, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
+      propertyPath: nextSceneNumber
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844251552645605550, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10

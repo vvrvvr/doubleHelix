@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject StartPosition;
     [SerializeField] private GameObject StartDialogue;
     [SerializeField] private GameObject EndDialogue;
+    [Space(10)] [SerializeField] private int nextSceneNumber = 0;
+    [Space(10)][SerializeField] private GameObject fadeIn;
+    [SerializeField] private GameObject fadeOut;
     
     
     private static GameManager _instance;
@@ -44,6 +47,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        fadeOut.SetActive(true);
     }
     
     
@@ -127,8 +132,8 @@ public class GameManager : MonoBehaviour
         {
             Death();
         }
-
-        SceneManager.LoadScene(1);
+        fadeIn.SetActive(true);
+        //SceneManager.LoadScene(nextSceneNumber);
     }
 
     public void SpawnPlayerAtStart()
