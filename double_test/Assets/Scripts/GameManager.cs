@@ -3,6 +3,7 @@ using Cinemachine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -126,6 +127,8 @@ public class GameManager : MonoBehaviour
         {
             Death();
         }
+
+        SceneManager.LoadScene(1);
     }
 
     public void SpawnPlayerAtStart()
