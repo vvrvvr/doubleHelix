@@ -1466,7 +1466,7 @@ MonoBehaviour:
   reduceTimeAtExplosion: 1
   delayAfterExplosionAffect: 1
   delayTime: 0.3
-  bombShakePower: 0.1
+  bombCameraShakePower: 0.1
   bombTimer: 10
 --- !u!135 &137347640
 SphereCollider:
@@ -6937,7 +6937,7 @@ MonoBehaviour:
   reduceTimeAtExplosion: 1
   delayAfterExplosionAffect: 1
   delayTime: 0.1
-  bombShakePower: 0.1
+  bombCameraShakePower: 0.1
   bombTimer: 10
 --- !u!135 &1009399683
 SphereCollider:
@@ -10860,6 +10860,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127512595}
     m_Modifications:
+    - target: {fileID: 490857119802313483, guid: d642656072d9228488d698d175dac794, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 52.86166
+      objectReference: {fileID: 0}
+    - target: {fileID: 490857119802313483, guid: d642656072d9228488d698d175dac794, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 49.68001
+      objectReference: {fileID: 0}
     - target: {fileID: 490857119802313483, guid: d642656072d9228488d698d175dac794, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
