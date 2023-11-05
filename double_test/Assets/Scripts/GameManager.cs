@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         lives = 0;
         livesText.text = "Lives: " + lives;
         Debug.Log("death");
+        PlayerController.Instance.TurnBombsOff();
         PlayerController.Instance.Death();
     }
 
@@ -125,12 +126,12 @@ public class GameManager : MonoBehaviour
     {
         if (EndDialogue.activeSelf)
         {
-            Death();
+            PlayerController.Instance.DisablePlayer();
             EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
         }
         else
         {
-            Death();
+            PlayerController.Instance.DisablePlayer();
         }
         fadeIn.SetActive(true);
         //SceneManager.LoadScene(nextSceneNumber);
