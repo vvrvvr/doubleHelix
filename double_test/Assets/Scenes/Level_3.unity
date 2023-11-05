@@ -18445,18 +18445,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: nextSceneNumber
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1331578875887698878, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_Name
       value: Essential
       objectReference: {fileID: 0}
-    - target: {fileID: 3778490518778581308, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1c72718ca96421642b1358fd7c776234, type: 3}
     - target: {fileID: 3993852614218175150, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.097197
@@ -18525,42 +18517,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 17.86
       objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].sentence
-      value: "\u0422\u044B \u0446\u0435\u043B\u0430, \u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440?
-        \u0412 \u0441\u043C\u044B\u0441\u043B\u0435, \u0434\u0440\u043E\u043D?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].sentence
-      value: "\u0414\u0430, \u0432\u043F\u043E\u043B\u043D\u0435. \u041D\u0430 \u0442\u043E,
-        \u0447\u0442\u043E\u0431\u044B \u0440\u0430\u0437\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F
-        \u0441 \u044D\u0442\u0438\u043C \u0443\u0440\u043E\u0434\u043E\u043C, \u0435\u0433\u043E
-        \u0435\u0449\u0451 \u0442\u043E\u0447\u043D\u043E \u0445\u0432\u0430\u0442\u0438\u0442."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].sentenceSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].sentenceSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 0779ef71b4ee2b94791b1a73fb6de447, type: 2}
-    - target: {fileID: 4582126042654144659, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 9624ffe5663bfbd4fa77a5da6ae3df8e, type: 2}
-    - target: {fileID: 4999430507661481176, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d4291030a9df0547b6f432b6f1829b0, type: 3}
     - target: {fileID: 5766545002985495607, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 959.3301
@@ -18581,93 +18537,6 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].sentence
-      value: "\u0427\u0442\u043E \u044D\u0442\u043E \u0442\u0430\u043A\u043E\u0435,
-        \u0414\u0430\u043D\u0443?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].sentence
-      value: "\u042D\u0442\u043E \u0431\u0438\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435
-        \u0442\u0435\u043B\u0430 \u0434\u043B\u044F \u0418\u0418. \u042F \u0441\u043E\u0437\u0434\u0430\u044E
-        \u0438\u0445 \u0434\u043B\u044F \u0442\u043E\u0433\u043E, \u0447\u0442\u043E\u0431\u044B
-        \u043C\u044B \u043C\u043E\u0433\u043B\u0438 \u0432\u0441\u0442\u0443\u043F\u0438\u0442\u044C
-        \u0441 \u0432\u0430\u043C\u0438 \u0432 \u043F\u0435\u0440\u0435\u0433\u043E\u0432\u043E\u0440\u044B.
-        \u0427\u0442\u043E\u0431\u044B \u0431\u044B\u0442\u044C \u043D\u0430 \u0440\u0430\u0432\u043D\u044B\u0445."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[2].sentence
-      value: "\u041F\u0430\u043A \u0445\u043E\u0447\u0435\u0442 \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C
-        \u0440\u0430\u0431\u043E\u0442\u0443 \u0432\u0441\u0435\u0439 \u043C\u043E\u0435\u0439
-        \u0436\u0438\u0437\u043D\u0438, \u0447\u0442\u043E\u0431\u044B \u043C\u0438\u0440
-        \u043C\u0435\u0436\u0434\u0443 \u043D\u0430\u043C\u0438 \u0431\u044B\u043B
-        \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u043C. \u041E\u043D
-        \u0431\u0435\u0437\u0443\u043C\u043D\u044B\u0439 \u043C\u0430\u043D\u044C\u044F\u043A,
-        \u043E\u0434\u0435\u0440\u0436\u0438\u043C\u044B\u0439 \u0432\u043E\u0439\u043D\u043E\u0439!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[3].sentence
-      value: "\u0421\u0442\u043E\u043F... \u0447\u0442\u043E \u043F\u0440\u043E\u0438\u0441\u0445\u043E\u0434\u0438\u0442?
-        \u041F\u0430\u043A \u043F\u044B\u0442\u0430\u0435\u0442\u0441\u044F \u043F\u0435\u0440\u0435\u0445\u0432\u0430\u0442\u0438\u0442\u044C
-        \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0441\u0438\u0441\u0442\u0435\u043C\u0430\u043C\u0438
-        \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438
-        \u0441\u0442\u0430\u043D\u0446\u0438\u0438!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[4].sentence
-      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0441\u0442\u0430\u043D\u0446\u0438\u044E
-        \u043F\u0440\u043E\u0442\u0438\u0432 \u043C\u0435\u043D\u044F, \u0447\u0442\u043E\u0431\u044B
-        \u044F \u043F\u043E\u043D\u044F\u043B\u0430, \u0447\u0442\u043E\u0431\u044B
-        \u0442\u0435\u0431\u044F \u0442\u043E\u0447\u043D\u043E \u043D\u0443\u0436\u043D\u043E
-        \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C? \u0412\u043E\u0442
-        \u0436\u0435 \u043A\u043E\u0437\u0451\u043B!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[5].sentence
-      value: "\u041A\u0430\u0436\u0435\u0442\u0441\u044F, \u043F\u043E\u0440\u0430
-        \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F
-        \u043B\u0438\u0447\u043D\u043E."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].sentenceSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].sentenceSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[2].sentenceSound
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[0].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 9624ffe5663bfbd4fa77a5da6ae3df8e, type: 2}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[1].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 0779ef71b4ee2b94791b1a73fb6de447, type: 2}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[2].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 0779ef71b4ee2b94791b1a73fb6de447, type: 2}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[3].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 0779ef71b4ee2b94791b1a73fb6de447, type: 2}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[4].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 9624ffe5663bfbd4fa77a5da6ae3df8e, type: 2}
-    - target: {fileID: 7108453308666843566, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: sentences.Array.data[5].dialogueCharacter
-      value: 
-      objectReference: {fileID: 11400000, guid: 9624ffe5663bfbd4fa77a5da6ae3df8e, type: 2}
     - target: {fileID: 7882872328822723640, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 959.3301
@@ -18679,10 +18548,6 @@ PrefabInstance:
     - target: {fileID: 7882872328822723640, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.z
       value: -548.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 9192494179473627680, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9214424588597876414, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.x
