@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class QuestManager : MonoBehaviour
     public List<Quest> linkedQuests = new List<Quest>();
     [SerializeField] private GameObject exitDoor;
     [SerializeField] private GameObject arrows;
+    [SerializeField] private TextMeshProUGUI objectivesText;
 
     public void CompleteAllQuests()
     {
@@ -20,6 +22,7 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(int value)
     {
         currentQuestsCompleted += value;
+        objectivesText.text = "Objectives: " +currentQuestsCompleted + "/"+ maxQuestsCompleted;
         if (currentQuestsCompleted >= maxQuestsCompleted)
         {
             CompleteAllQuests();
@@ -36,6 +39,7 @@ public class QuestManager : MonoBehaviour
             condition.SetQuestManager(this);
         }
         maxQuestsCompleted = linkedQuests.Count;
+        objectivesText.text = "Objectives: " +currentQuestsCompleted + "/"+ maxQuestsCompleted;
         if (maxQuestsCompleted == currentQuestsCompleted)
         {
             CompleteAllQuests();

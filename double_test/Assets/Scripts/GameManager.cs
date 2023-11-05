@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
     [Space(10)] [SerializeField] private int nextSceneNumber = 0;
     [Space(10)][SerializeField] private GameObject fadeIn;
     [SerializeField] private GameObject fadeOut;
+    [SerializeField] private GameObject DeathScreen;
     
     
     private static GameManager _instance;
+    public int maxLives = 3;
     public int lives = 3;
     public Vector3 currentCheckpoint;
     private CinemachineImpulseSource impulseSource;
@@ -50,11 +52,13 @@ public class GameManager : MonoBehaviour
         }
 
         fadeOut.SetActive(true);
+        DeathScreen.SetActive(false);
     }
     
     
     void Start()
     {
+        lives = maxLives;
         impulseSource = GetComponent<CinemachineImpulseSource>();
         livesText.text = "Lives: " + lives;
         currentCheckpoint = Vector3.zero;
@@ -65,10 +69,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O)) // удалить потом
+        if(Input.GetKeyDown(KeyCode.Escape)) // удалить потом
         {
-            RestartLevelFromCheckpoint();
-            //EndLevel();
+            ExtiGame();
         }
     }
     
@@ -93,6 +96,17 @@ public class GameManager : MonoBehaviour
         lives += 1;
         livesText.text = "Lives: " + lives;
     }
+    public void ExtiGame()
+    {
+        // save any game data here
+#if UNITY_EDITOR
+        // Application.Quit() does not work in the editor so
+        // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+             Application.Quit();
+#endif
+    }
 
     public void Death()
     {
@@ -101,11 +115,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("death");
         PlayerController.Instance.TurnBombsOff();
         PlayerController.Instance.Death();
+        DeathScreen.SetActive(true);
     }
 
     public void RestartLevel()
     {
-        lives = 3;
+        lives = maxLives;
         livesText.text = "Lives: " + lives;
         currentCheckpoint = Vector3.zero;
         PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
@@ -142,9 +157,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevelFromCheckpoint()
     {
+        DeathScreen.SetActive(false);
         if (currentCheckpoint != Vector3.zero)
         {
-            lives = 3;
+            lives = maxLives;
             livesText.text = "Lives: " + lives;
             PlayerController.Instance.SpawnPlayer(currentCheckpoint);
         }
