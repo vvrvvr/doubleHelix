@@ -26,13 +26,16 @@ public class QuestManager : MonoBehaviour
         objectivesText.text = "Objectives: " +currentQuestsCompleted + "/"+ maxQuestsCompleted;
         if (currentQuestsCompleted >= maxQuestsCompleted)
         {
-            CompleteAllQuests();
+            if (currentQuestsCompleted >= 10)
+            {
+                GameManager.Instance.EndLevel();
+            }
+            else
+            {
+                CompleteAllQuests();
+            }
         }
-
-        if (currentQuestsCompleted >= 10)
-        {
-            GameManager.Instance.EndLevel();
-        }
+        
     }
     
     
