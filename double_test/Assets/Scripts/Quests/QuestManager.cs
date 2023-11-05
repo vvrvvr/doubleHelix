@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
 
         if (currentQuestsCompleted >= 10)
         {
-            CompleteAllQuests();
+            GameManager.Instance.EndLevel();
         }
     }
     
