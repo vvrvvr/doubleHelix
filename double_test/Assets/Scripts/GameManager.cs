@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -124,17 +125,14 @@ public class GameManager : MonoBehaviour
 
     public void EndLevel()
     {
-        if (EndDialogue.activeSelf)
-        {
-            PlayerController.Instance.DisablePlayer();
-            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
-        }
-        else
-        {
-            PlayerController.Instance.DisablePlayer();
-        }
         fadeIn.SetActive(true);
-        //SceneManager.LoadScene(nextSceneNumber);
+        PlayerController.Instance.DisablePlayer();
+        StartCoroutine(EndDelay());
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextSceneNumber);
     }
 
     public void SpawnPlayerAtStart()
@@ -153,9 +151,21 @@ public class GameManager : MonoBehaviour
         else
             RestartLevel();
     }
+
+    public void EnableEndDialogue()
+    {
+        EndDialogue.SetActive(true);
+    }
     
     public void SetCheckpoint(Vector3 position)
     {
         currentCheckpoint = position;
+    }
+    
+    private IEnumerator EndDelay()
+    {
+        yield return new WaitForSeconds(1.3f);
+        if (EndDialogue.activeSelf)
+            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
     }
 }
