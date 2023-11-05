@@ -761,6 +761,7 @@ MonoBehaviour:
   rb2: {fileID: 921845368006036043}
   explosionListener: {fileID: 8247652290711069562}
   bombPrefab: {fileID: 4253441273438233769, guid: 8ea988cd4465ca249afcf84e1c5cd6d0, type: 3}
+  effect: {fileID: 6453984377442687035, guid: 088782280f45c494ab5fca6cef1b498f, type: 3}
   isRotatingClockwise: 1
   currentCenter: {fileID: 0}
   currentRotationSpeed: 0

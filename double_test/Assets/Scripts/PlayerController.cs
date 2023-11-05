@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb2;
     [SerializeField] private PlayerExplosionListener explosionListener;
     public GameObject bombPrefab;
+    public GameObject effect;
     
     private Rigidbody rb;
     public bool isRotatingClockwise = true;
@@ -189,6 +190,7 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
+        Instantiate(effect, body.transform.position, Quaternion.identity);
         Debug.Log("death");
         currentRb.angularVelocity = Vector3.zero;
         currentRb.velocity = Vector3.zero;
