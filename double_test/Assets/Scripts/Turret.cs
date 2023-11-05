@@ -9,10 +9,13 @@ public class Turret : MonoBehaviour
     [SerializeField] private float bulletSpeed = 1f;
     private float offset = 0.3f;
     private bool canFire = true;
+    private AudioSource audio;
 
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         StartCoroutine(ShootRoutine());
+        
     }
 
     private IEnumerator ShootRoutine()
@@ -32,6 +35,7 @@ public class Turret : MonoBehaviour
 
     private void Fire()
     {
+        audio.Play();
         // Рассчитываем направление стрельбы от текущей позиции к позиции direction без учета Y
         Vector3 targetPosition = direction.position;
         targetPosition.y = transform.position.y + offset;

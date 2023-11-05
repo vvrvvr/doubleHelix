@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bombPrefab;
     public List<GameObject> bombs = new List<GameObject>();
     public GameObject effect;
+    private AudioSource audio;
     
     private Rigidbody rb;
     public bool isRotatingClockwise = true;
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         explosionListener.delayAfterExplosionAffect = iFramesAfterDamage;
         explosionListener.delayTime = iFramseDuration;
+        audio = GetComponent<AudioSource>();
     }
 
     private void Awake()
@@ -127,6 +129,7 @@ public class PlayerController : MonoBehaviour
             {
                 var bomb = Instantiate(bombPrefab, red.transform.position, Quaternion.identity);
                 bombs.Add(bomb);
+                audio.Play();
             }
                 
             

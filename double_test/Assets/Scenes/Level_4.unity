@@ -14738,6 +14738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essential
       objectReference: {fileID: 0}
+    - target: {fileID: 2858737858357449346, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3428642282810889806, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5

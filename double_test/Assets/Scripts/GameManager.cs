@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public Vector3 currentCheckpoint;
     private CinemachineImpulseSource impulseSource;
+    private AudioSource audio;
     
     
     public static GameManager Instance
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         lives = maxLives;
         impulseSource = GetComponent<CinemachineImpulseSource>();
         livesText.text = "Lives: " + lives;
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
     public void ReduceLives(int damage, float impulsePower)
     {
         impulseSource.GenerateImpulse(impulsePower);
+        audio.Play();
         lives -= damage;
         livesText.text = "Lives: " + lives;
         if (lives <= 0)
