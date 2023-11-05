@@ -4,7 +4,8 @@ public class Bullet : MonoBehaviour
 {
     private Vector3 direction;
     private float speed;
-    public float lifetime = 5.0f; 
+    public float lifetime = 5.0f;
+    [SerializeField] private ParticleSystem effect;
 
     public void SetDirection(Vector3 dir, float bulletSpeed)
     {
@@ -26,8 +27,13 @@ public class Bullet : MonoBehaviour
     {
         if (!other.CompareTag("Turret"))
         {
+            if (other.CompareTag("Player") || other.CompareTag("PlayerPoint") )
+            { 
+                GameManager.Instance.ReduceLives(1, 1);
+            }
+            Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
-           // GameManager.Instance.ReduceLives(1, 1);
+           
         }
     }
 }
