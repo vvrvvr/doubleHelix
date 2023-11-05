@@ -18446,6 +18446,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
+      propertyPath: lives
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
+      propertyPath: maxLives
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: nextSceneNumber
       value: 4
       objectReference: {fileID: 0}

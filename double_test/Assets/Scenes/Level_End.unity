@@ -58387,6 +58387,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
+      propertyPath: lives
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205419457903715583, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
+      propertyPath: nextSceneNumber
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1331578875887698878, guid: 719b74a5239d6db47879a6e5a8add0eb, type: 3}
       propertyPath: m_Name
       value: Essential
