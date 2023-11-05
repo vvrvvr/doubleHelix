@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 
 public class QuestManager : MonoBehaviour
 {
@@ -27,9 +28,14 @@ public class QuestManager : MonoBehaviour
         {
             CompleteAllQuests();
         }
+
+        if (currentQuestsCompleted >= 10)
+        {
+            CompleteAllQuests();
+        }
     }
     
-
+    
     private void Start()
     {
         arrows.SetActive(false);

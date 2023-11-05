@@ -73,6 +73,10 @@ public class GameManager : MonoBehaviour
         {
             ExtiGame();
         }
+        if(Input.GetKeyDown(KeyCode.O)) // удалить потом
+        {
+            EndLevel();
+        }
     }
     
     public void ReduceLives(int damage, float impulsePower)
