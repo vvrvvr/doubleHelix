@@ -21,14 +21,7 @@ public class QuestManager : MonoBehaviour
             CompleteAllQuests();
         }
     }
-
-    public void CheckQuestConditions()
-    {
-        // foreach (var condition in linkedObjects)
-        // {
-        //     condition.ConditionComplete();
-        // }
-    }
+    
 
     private void Start()
     {
