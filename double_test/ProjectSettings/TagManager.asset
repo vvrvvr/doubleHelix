@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - PlayerPoint
+  - Turret
   layers:
   - Default
   - TransparentFX
