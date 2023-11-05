@@ -3,11 +3,18 @@ using Cinemachine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private GameObject StartPosition;
+    [SerializeField] private GameObject StartDialogue;
+    [SerializeField] private GameObject EndDialogue;
+    [Space(10)] [SerializeField] private int nextSceneNumber = 0;
+    [Space(10)][SerializeField] private GameObject fadeIn;
+    [SerializeField] private GameObject fadeOut;
+    
     
     private static GameManager _instance;
     public int lives = 3;
@@ -40,6 +47,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        fadeOut.SetActive(true);
     }
     
     
@@ -49,14 +58,16 @@ public class GameManager : MonoBehaviour
         livesText.text = "Lives: " + lives;
         currentCheckpoint = Vector3.zero;
         StartPosition.GetComponent<Renderer>().enabled = false;
-        PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
+        StartLevel();
+
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S)) // удалить потом
+        if(Input.GetKeyDown(KeyCode.O)) // удалить потом
         {
             RestartLevelFromCheckpoint();
+            //EndLevel();
         }
     }
     
@@ -95,6 +106,38 @@ public class GameManager : MonoBehaviour
         lives = 3;
         livesText.text = "Lives: " + lives;
         currentCheckpoint = Vector3.zero;
+        PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
+    }
+
+    public void StartLevel()
+    {
+        if (StartDialogue.activeSelf)
+        {
+            StartDialogue.GetComponent<SceneStartDialogue>().StartDialog();
+        }
+        else
+        {
+            SpawnPlayerAtStart();
+        }
+    }
+
+    public void EndLevel()
+    {
+        if (EndDialogue.activeSelf)
+        {
+            Death();
+            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
+        }
+        else
+        {
+            Death();
+        }
+        fadeIn.SetActive(true);
+        //SceneManager.LoadScene(nextSceneNumber);
+    }
+
+    public void SpawnPlayerAtStart()
+    {
         PlayerController.Instance.SpawnPlayer(StartPosition.transform.position);
     }
 
