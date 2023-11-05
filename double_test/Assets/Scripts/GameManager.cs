@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         lives = 0;
         livesText.text = "Lives: " + lives;
         Debug.Log("death");
+        PlayerController.Instance.TurnBombsOff();
         PlayerController.Instance.Death();
     }
 
@@ -123,17 +125,14 @@ public class GameManager : MonoBehaviour
 
     public void EndLevel()
     {
-        if (EndDialogue.activeSelf)
-        {
-            Death();
-            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
-        }
-        else
-        {
-            Death();
-        }
         fadeIn.SetActive(true);
-        //SceneManager.LoadScene(nextSceneNumber);
+        PlayerController.Instance.DisablePlayer();
+        StartCoroutine(EndDelay());
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(nextSceneNumber);
     }
 
     public void SpawnPlayerAtStart()
@@ -152,9 +151,21 @@ public class GameManager : MonoBehaviour
         else
             RestartLevel();
     }
+
+    public void EnableEndDialogue()
+    {
+        EndDialogue.SetActive(true);
+    }
     
     public void SetCheckpoint(Vector3 position)
     {
         currentCheckpoint = position;
+    }
+    
+    private IEnumerator EndDelay()
+    {
+        yield return new WaitForSeconds(1.3f);
+        if (EndDialogue.activeSelf)
+            EndDialogue.GetComponent<SceneStartDialogue>().StartDialog();
     }
 }

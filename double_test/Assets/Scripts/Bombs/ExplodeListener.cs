@@ -37,6 +37,11 @@ public class ExplodeListener : MonoBehaviour, IExplodable
       bomb.ReduceTime(reduceTimeAtExplosion);
     }
   }
+
+  public void RestartExplode()
+  {
+    bomb.ReduceTime(20);
+  }
   
   private IEnumerator ResetDelay()
   {
