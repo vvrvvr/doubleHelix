@@ -7166,7 +7166,7 @@ PrefabInstance:
       objectReference: {fileID: 2484716326019419498}
     - target: {fileID: 5130305741646762846, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: maxLives
-      value: 200
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5130305741646762846, guid: 618215066b383cc44bbb1d182bd9c4a1, type: 3}
       propertyPath: livesText

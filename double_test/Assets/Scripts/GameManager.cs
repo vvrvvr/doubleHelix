@@ -69,10 +69,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O)) // удалить потом
+        if(Input.GetKeyDown(KeyCode.Escape)) // удалить потом
         {
-            RestartLevelFromCheckpoint();
-            //EndLevel();
+            ExtiGame();
         }
     }
     
@@ -96,6 +95,17 @@ public class GameManager : MonoBehaviour
     {
         lives += 1;
         livesText.text = "Lives: " + lives;
+    }
+    public void ExtiGame()
+    {
+        // save any game data here
+#if UNITY_EDITOR
+        // Application.Quit() does not work in the editor so
+        // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+             Application.Quit();
+#endif
     }
 
     public void Death()
